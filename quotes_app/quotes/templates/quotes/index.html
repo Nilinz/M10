@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Organizer</title>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"/>
-</head>
-<body>
-<main class="container">
-    <h1>Main page</h1>
+{% extends "quotes/base.html" %}
 
-    <nav style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
-        {% if user.is_authenticated %}
-        <ul>
-            <li><a href="{% url 'quotes:note' %}" role="button">Add note</a></li>
-            <li><a href="{% url 'quotes:tag' %}" role="button">Add Tag</a></li>
-        </ul>
-        <ul>
-            <li>Welcome <b>{{ user.username }}!</b></li>
-            <li><a href="{% url 'users:logout' %}" role="button">Logout</a></li>
-        </ul>
-        {% else %}
-        <ul>
-            <li><a href="{% url 'users:signup' %}" role="button">Sign Up</a></li>
-            <li><a href="{% url 'users:login' %}" role="button">Login</a></li>
-        </ul>
-        {% endif %}
-    </nav>
-
-</main>
-</body>
-</html>
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            {% for quote in quotes %}
+                <div class="quote-block">
+                    <span class="text">{{ quote.quote }}</span>
+                    <span>by <small class="author">{{ quote.author }}</small></span>
+                    <div class="tags">
+                        Tags:
+                        {% for tag in quote.tags %}
+                            <a class="tag" href="/tag/{{ tag|slugify }}/page/1/">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

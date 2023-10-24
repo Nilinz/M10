@@ -5,3 +5,46 @@
 .alert-success {
     color: green;
 }
+
+.authors-container {
+    margin-bottom: 30px;
+}
+
+/* Стилі для блоку автора */
+.author-block {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Стилі для контейнера цитат */
+.quotes-container {
+    margin-bottom: 30px;
+}
+
+/* Стилі для блоку цитати */
+.quote-block {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Стилі для контейнера тегів */
+.tags-container {
+    margin-bottom: 30px;
+}
+
+/* Стилі для блоку тега */
+.tag-block {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block; /* Робить теги виглядають як блоки в ряд */
+    margin-right: 10px; /* Відстань між тегами */
+}

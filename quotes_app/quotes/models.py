@@ -24,3 +24,6 @@ class Quote(models.Model):
     tags = models.ManyToManyField(Tag)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, default=None, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.text}"
