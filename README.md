@@ -6,7 +6,8 @@
 django-admin startproject quotes_app
 ```
 
-```docker run --name quotesapp-postgres -p 5432:5432 -e POSTGRES_PASSWORD=567234 -d postgres
+```
+docker run --name quotesapp-postgres -p 5432:5432 -e POSTGRES_PASSWORD=567234 -d postgres
 ```
 
 Створення адміна:
