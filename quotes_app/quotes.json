@@ -41,5 +41,14 @@
         ],
         "author": "Steve Martin",
         "quote": "“A day without sunshine is like, you know, night.”"
+    },
+    {
+        "_id": "1",
+        "tags": [
+            "life",
+            " motivation"
+        ],
+        "author": "Ivam",
+        "quote": "Never give up"
     }
 ]

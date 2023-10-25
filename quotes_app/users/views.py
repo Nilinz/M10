@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages  # Додали імпорт messages
 from .forms import RegisterForm, LoginForm
 from django.contrib.auth.decorators import login_required
-
-
 
 def signupuser(request):
     if request.user.is_authenticated:
@@ -37,4 +36,4 @@ def loginuser(request):
 @login_required
 def logoutuser(request):
     logout(request)
-    return redirect(to='noteapp:main')
+    return redirect(to='quotes:main')
