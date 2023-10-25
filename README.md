@@ -1,24 +1,51 @@
 # M10_Django
 
-## Для проекту потрібно встановити програми:
+## Для проекту потрібно запустити:
 
+```
 django-admin startproject quotes_app
+```
 
- docker run --name quotesapp-postgres -p 5432:5432 -e POSTGRES_PASSWORD=567234 -d postgres
+```docker run --name quotesapp-postgres -p 5432:5432 -e POSTGRES_PASSWORD=567234 -d postgres
+```
 
+Створення адміна:
 
- pipenv install psycopg2
-
+```
 python manage.py createsuperuser
+```
 
+Створення додатку для цитат:
+```
 python manage.py startapp quotes
+```
 
+Створення додатку для авторизації:
+
+```
+python manage.py startapp users
+```
+
+Міграції моделей:
+
+```
 python manage.py makemigrations
+```
 
+```
 python manage.py migrate
+```
 
-- MongoDB: Для роботи з базою даних MongoDB. Можна завантажити з офіційного сайту MongoDB: https://www.mongodb.com/try/download/community
-  
+Запускаємо сервер:
+
+```
+python manage.py runserver     
+```
+
+http://127.0.0.1:8000
+
+
+ 
 ## Запуск проекту
 
 Створіть конфігураційний файл ``config.ini`` з налаштуваннями для підключення до вашої MongoDB бази даних. Ваш файл ``config.ini`` може виглядати так:
