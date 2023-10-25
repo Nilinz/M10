@@ -59,10 +59,10 @@ def add_quote(request):
             author_name = form.cleaned_data["author"]
             quote_text = form.cleaned_data["quote"]
 
-            # Отримайте або створіть автора
+            
             author, created = Author.objects.get_or_create(fullname=author_name)
 
-            # Створіть цитату та додайте до неї теги та автора
+            
             quote = Quote.objects.create(quote=quote_text, author=author)
             for tag_name in tags:
                 tag, created = Tag.objects.get_or_create(name=tag_name.strip())
